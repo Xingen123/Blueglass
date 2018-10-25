@@ -1,0 +1,4 @@
+<!--pages/uclickFirTab/wxmap/index.wxml-->
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="11" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" bindcallouttap="bindcallouttap" show-location style="width: 100%; height:{{clientHeight?clientHeight+'px':'auto'}};" >
+
+</map>

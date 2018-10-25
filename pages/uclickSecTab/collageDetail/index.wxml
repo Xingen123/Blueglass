@@ -1,0 +1,54 @@
+<!--pages/uclickSecTab/collage/index.wxml-->
+<view class='haveInHand'>
+  <view class='mark' hidden='{{ifshowShare}}' catchtap='closeView'>
+  </view>
+  <button open-type='share' class='img_default' hidden='{{ifshowShare}}'>
+    <image src='../../images/default/ljfx.png' class='img_default'></image>
+  </button>
+
+  <view class='collage_person boxshoaw'>
+    <view class='count_down'>{{clock}}</view>
+    <text class='collage_title'>参与者信息</text>
+    <block wx:for="{{collagingOrderInfo.groupMembers}}" wx:for-item="item" wx:for-index="idx">
+      <view class='collage_list'>
+        <view class='collage_detail'>
+          <image src="{{item.memberIconUrl}}" binderror="headerErrorFunction" data-errorimg="{{idx}}"></image>
+        </view>
+        <view class='collage_right'>
+          <text>{{item.memberNickName}}</text>
+          <view class='collage_phone'>"{{item.memberPhone}}"</view>
+        </view>
+      </view>
+    </block>
+
+    <view class='collage_invite'>成团还需邀请
+      <text>{{collagingOrderInfo.remainCount}}</text>人</view>
+  </view>
+
+
+  <view class='order_detail boxshoaw'>
+    <text class='collage_title'>订单详情</text>
+
+    <view class='order_desc'>
+      <view class='order_desc_left'>
+        <view class='order_left_title'>{{collagingOrderInfo.recommendTitle}}</view>
+        <view class='order_left_time'>{{collagingOrderInfo.recommendTime}}</view>
+      </view>
+      <view class='order_desc_right'>
+        <image src="{{collagingOrderInfo.recommendImg}}" binderror="completedErrorFunction"></image>
+      </view>
+    </view>
+
+    <view class='order_money'>
+      <view class='order_money_l'>拼团价</view>
+      <view class='order_money_r'>¥{{collagingOrderInfo.payedAmount}}</view>
+    </view>
+
+    <view class='order_type'>
+      <view class='order_type_l'>拼团类型</view>
+      <view class='order_type_r'>{{collagingOrderInfo.collageCount}}人团</view>
+    </view>
+  </view>
+
+  <button class='dowload_app' open-type="share" id="1" hidden="{{isHiddenShare}}">立即分享</button>
+</view>

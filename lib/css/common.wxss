@@ -1,0 +1,50 @@
+.c333 {
+  color: #333;
+}
+
+.c666 {
+  color: #666;
+}
+
+.c999 {
+  color: #999;
+}
+
+.boxshoaw {
+  box-shadow: 0px 0px 10px #dedede;
+}
+
+.borbot {
+  border-bottom: 2rpx solid #dedede;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+button::after {
+  border: none;
+}
+
+.owt {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.owt2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.word_end {
+  color: #999;
+}
+
+.bg_end {
+  background: #999;
+}

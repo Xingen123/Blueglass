@@ -1,0 +1,23 @@
+<!--pages/uclickThiTab/uclickMyCoupon/uclickMyCoupon.wxml-->
+<!-- <text>pages/uclickThiTab/uclickMyCoupon/uclickMyCoupon.wxml</text>
+ -->
+<import src = "couponTemplate/couponTemplate.wxml" />
+
+
+<view class='coupon-container'>
+  <view class='coupon-ruleView' catchtap='jumpCouponRule'>
+    <text class='coupon-useTitle'>使用规则</text>
+    <image src='../../images/my/xq@2x.png' class='coupon-useIcon'></image>
+  </view> 
+
+<block class='view-container' wx:for="{{couponList}}" wx:for-index="index" wx:for-item="item" wx:if="{{couponList.length>0}}">
+<view bindtap='fuzhiAction' data-couponid="{{item.couponCode}}">
+    <template is = "couponTemplate" data="{{item}}"> </template>
+</view>
+</block>
+
+ <block wx:if="{{couponList.length==0}}">
+    <image src='../../images/default/zwyhq.png' class='img_default'></image>
+  </block>
+
+</view>

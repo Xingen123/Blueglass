@@ -1,0 +1,10 @@
+/* pages/uclickFirTab/selectTime/selectTime.wxss */
+
+@import "timeTemplate/timeTemplate.wxss";
+
+.view-container{
+  display: flex;
+  flex-direction: column;
+  height: 100rpx;
+  width: calc(100% - 60rpx);
+}

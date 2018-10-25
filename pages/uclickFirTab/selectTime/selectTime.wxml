@@ -1,0 +1,9 @@
+<!--pages/uclickFirTab/selectTime/selectTime.wxml-->
+<!-- <text>pages/uclickFirTab/selectTime/selectTime.wxml</text> -->
+<import src = "timeTemplate/timeTemplate.wxml" />
+
+<view class='view-container' wx:for="{{timeStrArr}}" wx:for-index="index" wx:for-item="item">
+  <view catchtap='selectTime'  data-selectid="{{index}}">
+    <template is = "timeTemplate" data="{{item}}"> </template>
+  </view>
+</view>

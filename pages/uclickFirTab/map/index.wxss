@@ -1,0 +1,45 @@
+/* pages/uclickFirTab/map/index.wxss */
+@import "../../../lib/css/common.wxss";
+.map_container{ 
+    /* min-height: 100%;  */
+    width: 100%; 
+} 
+
+.map { 
+    height: 100%; 
+    width: 100%; 
+}
+.rgc_info{
+  width:450rpx;
+  height:300rpx;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  margin:auto;
+  /* display: none; */
+
+}
+.rgc_info image{
+  height: 300rpx;
+  display: block;
+  width: 450rpx;
+}
+.rgc_title{
+  height: 40rpx;
+  line-height: 40rpx;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 24rpx;
+  padding-left: 10rpx;
+  width: calc(100% - 10rpx);
+  position: absolute;
+  bottom: 0;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}

@@ -1,0 +1,39 @@
+<!--pages/uclickThiTab/uclickMyCoupon/couponRule/couponRule.wxml-->
+<!-- <text>pages/uclickThiTab/uclickMyCoupon/couponRule/couponRule.wxml</text>
+ -->
+
+<text class='coupon-ruleTitle'>
+小程序优惠券使用规则
+</text>
+<view class='coupon_con'>
+
+  <view class='coupon-ruleSpace'>
+  </view>
+  <text class='coupon-rule'>
+  小程序单独购买付款成功后，或者拼团订单成功拼团后，您将收到一张20元体验通用优惠券和一张价值45元的买一赠一酸奶券。具体使用规则如下：
+  </text>
+
+  <view class='coupon-ruleSpace'>
+  </view>
+  <text class='coupon-rule'>
+  1，下载官方APP——【Uclick】，点击底部菜单【礼券】，在对话框中输入券码，即可兑换优惠券。
+  </text>
+
+  <view class='coupon-ruleSpace'>
+  </view>
+  <text class='coupon-rule'>
+  2，优惠券有使用期限，请尽快使用哦。
+  </text>
+
+  <view class='coupon-ruleSpace'>
+  </view>
+  <text class='coupon-rule'>
+  3，【Uclick】还有更多有意思的达人体验，赶快去下载抢先了解吧。
+  </text>
+
+  <view class='coupon-ruleSpace'>
+  </view>
+  <text class='coupon-rule'>
+  4，如有其它问题，欢迎联系客服小姐姐。 
+ </text>
+</view>

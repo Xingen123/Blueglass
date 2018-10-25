@@ -1,0 +1,124 @@
+/* pages/uclickFirTab/experience/index.wxss */
+@import "../../../lib/css/common.wxss";
+
+.page {
+  height: 100%;
+}
+
+.navbar {
+    display: flex;
+    /* position: absolute; */
+    z-index: 500;
+    top: 0;
+    width: calc(100% - 60rpx);
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: 100rpx;
+    line-height: 100rpx;
+    justify-content:space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar__item {
+    position: relative;
+    display: block;
+    flex: 1;
+    text-align: center;
+    font-size: 0;
+    /* <!-- NavBar的总高度为：height + padding-top + padding-bottom = 68rpx --> */
+}
+
+.navbar__item_on {
+    color: #0082bf;
+}
+.navbar_title{
+    color: #333333;
+    display: inline-block;
+    font-size: 32rpx;
+    max-width: 8em;
+    text-align: center;
+}
+.navbar_title_cur{
+    color: #0082ba;
+    border-bottom: 2rpx solid #0082bf;
+    height: 75rpx;
+}
+
+.swiper {
+  height: 100%;
+}
+
+.swiper-item{
+  width: 100%;
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+.swiper_con{
+  width: 690rpx;
+  margin: 0 auto;
+  height: 542rpx;
+  border: 2rpx solid #dedede;
+  margin-bottom:20rpx;
+  border-radius: 10rpx;
+}
+.swiper_con image{
+  width: 690rpx;
+  height: 460rpx;
+}
+.swiper_con_bot{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top:3rpx;
+
+}
+.collage_left{
+   margin-left: 10rpx;
+}
+.collage_time{
+  font-size: 38rpx;
+  color: #e64340;
+  margin-right: 8rpx;
+}
+.collage_person{
+  font-size: 32rpx;
+  color: #333;
+}
+.img_default{
+  height: 250rpx;
+  width: 250rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0rpx;
+  bottom: 0;
+  margin: auto;
+}
+.have_in_hand_time{
+  font-size: 38rpx;
+  color: #333;
+  margin-left: 10rpx;
+}
+.have_in_hand_button,.collage_button{
+  font-size: 32rpx;
+  color: #fff;
+  width: 180rpx;
+  height: 51rpx;
+  line-height: 51rpx;
+  border-radius: 51rpx;
+  background: #0082ba;
+  margin-right:10px;
+  padding: 0 10rpx;
+}
+.completed_button{
+  background: #ccc;
+  font-size: 32rpx;
+  color: #fff;
+  width: 180rpx;
+  height: 51rpx;
+  line-height: 51rpx;
+  border-radius: 51rpx;
+  margin-right:10px;
+}

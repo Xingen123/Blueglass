@@ -1,0 +1,62 @@
+<!--pages/uclickFirTab/pay/index.wxml-->
+<view class='haveInHand'>
+    <view class='pay_success boxshoaw'  bindtap='pushTimeSelect' data-timeid="{{experTime.timeId}}">
+      <text class='collage_title'>体验时间</text>
+      <view class='exper_time'>
+          <text>{{experTime.timeInfo}}</text>
+          <image src='../../images/home/gd.png'></image>
+      </view>
+    </view>
+
+    <view class='collage_person boxshoaw'  bindtap='changeUserInfo'>
+        <text class='collage_title'>参与者信息</text>
+        <view class='pay_list'>
+          <view class='collage_list'>
+              <view class='collage_detail'>
+                  <image src="{{headerUrl}}" binderror="headerErrorFunction"></image>
+              </view>
+              <view class='collage_right'>
+                  <text>{{userName}}</text>
+                  <view class='collage_phone'>{{phoneNumber}}</view>
+              </view>
+          </view>
+          <image src='../../images/home/gd.png' class='pay_image'></image>
+        </view>
+
+    </view>
+    
+    
+    <view class='order_detail boxshoaw'>
+        <text class='collage_title'>订单详情</text>
+
+        <view class='order_desc'>
+            <view class='order_desc_left'>
+                <view class='order_left_title'>{{recommendDetail.title}}</view>
+                <view class='order_left_time owt'>{{recommendDetail.recommendAddress.addressDetail}}</view>
+            </view>
+            <view class='order_desc_right'>
+                <image src="{{recommendDetail.homeImgUrl}}" binderror="recErrorFunction"></image>
+            </view>
+        </view>
+
+        <view class='order_type'>
+            <view class='order_type_l'>原价</view>
+            <view class='order_type_r'>¥{{recommendDetail.price}}</view>
+        </view>
+
+        <view class='order_money' hidden="{{isAlone}}">
+          <view class='order_money_l'>拼团价</view>
+          <view class='order_money_r'>¥{{recommendDetail.collagePrice}}</view>
+        </view>
+
+        
+    </view>
+
+    <form bindsubmit="pay" report-submit='true' >
+
+     <button class='dowload_app' form-type="submit" data-timeid="{{experTime.timeId}}">¥{{isAlone?recommendDetail.price:recommendDetail.collagePrice}} 确认支付</button>
+
+    </form>
+</view>
+
+

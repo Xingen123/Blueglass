@@ -1,0 +1,67 @@
+<!--pages/home/index.wxml-->
+<view class='home'>
+  <!-- <button wx:if="{{ldata}}" bindtap='btnTap'>获取位置信息</button>
+  <button wx:else open-type="openSetting" bindopensetting='handler'>点击授权并获取位置信息</button> -->
+
+  <block wx:if="{{canIUse}}">
+    <view class='location' catchtap='BaiduMap'>
+      <view class='location_con'>
+        <image src='../../images/home/dw@2x.png' class='location_img'></image>
+        <text class='location_region'>{{address}}</text>
+        <image src='../../images/home/xl@2x.png' class='location_xsj'></image>
+        <text class='location_nearby'>{{expNum}}个附近的体验</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <button class='location' catchtap='BaiduMap' open-type='getLocation'>
+      <view class='location_con'>
+        <image src='../../images/home/dw@2x.png' class='location_img'></image>
+        <text class='location_region'>{{address}}</text>
+        <image src='../../images/home/xl@2x.png' class='location_xsj'></image>
+        <text class='location_nearby'>{{expNum}}个附近的体验</text>
+      </view>
+    </button>
+  </block>
+
+  <!-- banner -->
+  <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}"
+    next-margin="{{nextMargin}}" class='swiperimgs'>
+    <block wx:for="{{indexbanners}}" wx:for-item="item" wx:for-index="idx">
+      <swiper-item class='swiperimg'>
+        <image src="{{item.bannerImgUrl}}" class="slide-image" width="640" height="300" binderror="scrollErrorFunction" data-errorimg="{{idx}}" bindtap='clickScroll' data-recommendid="{{item.recommendId}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <scroll-view class="nav" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{indexHometypeDataList.data}}" wx:for-item="item" wx:for-index="idx">
+      <view class='nav_img' data-index="{{idx}}" catchtap='changeDataSoureAction' data-typeId="{{item.typeId}}">
+        <image src="{{item.bgImgUrl}}" binderror="typeErrorFunction" data-errorimg="{{idx}}"></image>
+        <view class='nav_title'>
+          <view class='nav_title_name' data-id="{{curcolor}}">{{item.typeName}}</view>
+          <view class='{{curcolor==idx?"bot_cur":""}}'></view>
+        </view>
+
+        <!-- <view class='nav_title_name' data-id="{{curcolor}}" style='{{curcolor==idx?"color:#0082bf;":""}}'>{{item.typeName}}</view> -->
+
+      </view>
+    </block>
+  </scroll-view>
+
+
+  <block wx:for="{{recommendBaseInfoList}}" wx:for-item="item" wx:for-index="idx">
+    <view>
+      <view class='be_detail' bindtap='expClick' data-experid="{{item.id}}">
+        <view class='be_img'>
+          <image src="{{item.homeImgUrl}}" binderror="recommendErrorFunction" data-errorimg="{{idx}}"></image>
+          <button>￥{{item.price}}</button>
+        </view>
+        <view class='be_name'>{{item.authorName}} {{item.age}} {{item.job}}</view>
+        <view class='be_desc'>{{item.title}}</view>
+      </view>
+    </view>
+  </block>
+
+
+</view>

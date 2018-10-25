@@ -1,0 +1,116 @@
+/* pages/uclickSecTab/haveInHand/index.wxss */
+@import "../../../lib/css/common.wxss";
+.haveInHand{
+  padding-bottom: 40rpx;
+}
+.haveInHand_img {
+  width: 690rpx;
+  margin:0 auto;
+  height:460rpx;
+  border:2rpx solid #dedede;
+  margin-bottom:20rpx;
+  border-radius:10rpx;
+  position: relative;
+}
+.haveInHand_img image {
+  height:460rpx;
+  width: 690rpx;
+  display:block;
+}
+.haveInHand_img_desc{
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 10rpx);
+  height: 44rpx;
+  line-height: 44rpx;
+  background: rgba(0, 0, 0, .5);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 32rpx;
+  color: #fff;
+  padding-left: 10rpx;
+}
+.haveInHand_wz{
+  height: 158rpx;
+  width: 630rpx;
+  margin: 0 auto;
+  padding: 15rpx 30rpx;
+  border: 2rpx solid #dedede;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+.haveInHand_title{
+  font-size: 32rpx;
+  color: #666;
+}
+.haveInHand_loaction,.haveInHand_time{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.haveInHand_loaction_left image,.haveInHand_time_left image{
+  height: 22rpx;
+  width: 22rpx;
+  margin-right: 10rpx;
+}
+.haveInHand_loaction_left text,.haveInHand_time_left text{
+  font-size: 28rpx;
+  color: #333;
+}
+.haveInHand_wz_img{
+  height: 20rpx;
+  width: 12rpx;
+}
+
+.haveInHand_person{
+  width: 630rpx;
+  margin: 0 auto;
+  padding:30rpx 30rpx 10rpx 30rpx;
+  border: 2rpx solid #dedede;
+  border-radius: 10rpx;
+  margin-top: 40rpx;
+}
+.haveInHand_per_list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #dedede;
+}
+.haveInHand_person view:first-child{
+  border:none;
+  color: red;
+}
+.haveInHand_per_detail{
+  margin: 20rpx 0;
+  display: flex;
+  align-items: center;
+}
+.haveInHand_per_detail image{
+  height: 72rpx;
+  width: 72rpx;
+  border-radius: 50%;
+}
+.haveInHand_per_detail text{
+  font-size: 28rpx;
+  color: #333;
+  margin-left: 10rpx;
+}
+.haveInHand_per_time{
+  font-size: 26rpx;
+  color: #999;
+}
+
+.pay_detail{
+  width: 630rpx;
+  margin: 40rpx auto;
+  padding:30rpx;
+  border: 2rpx solid #dedede;
+  border-radius: 10rpx;
+}
+.pay_detail_order{
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 20rpx;
+}

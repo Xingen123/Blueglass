@@ -1,0 +1,41 @@
+<template name = 'couponTemplate'>
+   <view class='coupon-cell-lineView'>
+  </view>
+
+  <view class='coupon-cell-container bg_blue' wx:if="{{item.validStatus==true}}">
+    <view class='coupon-cell-topView'>
+      <view class='coupon-cell-moneyTitle'>
+        <text class='coupon-cell-title'>{{item.status}}</text>
+        <text class='coupon-cell-money'>¥{{item.couponAmount}}</text>
+      </view>
+      <view class='coupon-cell-dateCondition'>
+        <text class='coupon-cell-couponName'>{{item.couponName}}</text>
+        <text class='coupon-cell-useCondition'>仅限u-click app使用</text>
+        <text class='coupon-cell-date'>有效期至：{{item.useDateYear}}年{{item.useDateMonth}}月{{item.useDateDay}}日</text>
+      </view>
+    </view>
+    <view class='coupon-cell-codeView'>
+      <text class='coupon-cell-code'>兑换码：{{item.couponCode}}</text>
+      <text class='coupon-cell-paste'>点击复制</text>
+    </view>
+  </view>
+
+<view class='coupon-cell-container bg_gray' wx:else="{{item.validStatus==false}}">
+    <view class='coupon-cell-topView'>
+      <view class='coupon-cell-moneyTitle'>
+        <text class='coupon-cell-title'>{{item.status}}</text>
+        <text class='coupon-cell-money'>¥{{item.couponAmount}}</text>
+      </view>
+      <view class='coupon-cell-dateCondition'>
+        <text class='coupon-cell-couponName'>{{item.couponName}}</text>
+        <text class='coupon-cell-useCondition'>仅限u-click app使用</text>
+        <text class='coupon-cell-date'>有效期至：{{item.useDateYear}}年{{item.useDateMonth}}月{{item.useDateDay}}日</text>
+      </view>
+    </view>
+    <view class='coupon-cell-codeView'>
+      <text class='coupon-cell-code'>兑换码：{{item.couponCode}}</text>
+      <text class='coupon-cell-paste'>点击复制</text>
+    </view>
+  </view>
+
+</template>

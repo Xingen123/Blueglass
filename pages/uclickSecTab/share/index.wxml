@@ -1,0 +1,84 @@
+<!--pages/uclickSecTab/share/index.wxml-->
+<view class='haveInHand'>
+  <view class='order_detail boxshoaw' catchtap='push_experience' data-timeid=''>
+    <!-- word_end 拼团结束style -->
+    <view class='count_down word_end'>{{clock}}</view>
+    <view class='share_desc'>
+      <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+      <text>您的好友{{collagingOrderInfo.sharedUserName}}，邀请你一起参加此体验</text>
+    </view>
+    <view class='order_desc'>
+      <view class='order_desc_right'>
+        <image src="{{collagingOrderInfo.recommendImg}}" binderror="completedErrorFunction"></image>
+      </view>
+
+      <view class='order_desc_left'>
+        <view class='order_left_title'>{{collagingOrderInfo.recommendTitle}}</view>
+        <view class='order_left_time'>
+          <image src='../../images/order/Xsj@2x.png'></image>
+          <text>{{collagingOrderInfo.recommendTime}}</text>
+        </view>
+        <view class='order_left_wz'>
+          <image src='../../images/order/Xdw@2x.png'></image>
+          <text>{{collagingOrderInfo.recommendAddress.addressDetail}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='order_type'>
+      <view class='order_type_l'>拼团类型</view>
+      <view class='order_type_r'>{{collagingOrderInfo.collageCount}}人团</view>
+    </view>
+
+    <view class='order_money'>
+      <view class='order_money_l'>拼团价</view>
+      <view class='order_money_r'>¥{{collagingOrderInfo.payedAmount}}</view>
+    </view>
+
+
+  </view>
+
+
+  <view class='collage_person boxshoaw'>
+    <text class='collage_title'>拼团详情</text>
+    <block wx:for="{{collagingOrderInfo.groupMembers}}" wx:for-item="item" wx:for-index="idx">
+      
+      <view class='collage_list' wx:if="{{collagingOrderInfo.groupMembers.length>1}}">
+        <view class='collage_detail'>
+          <image src="{{item.memberIconUrl}}" binderror="headerErrorFunction" data-errorimg="{{idx}}"></image>
+        </view>
+        <view class='collage_right'>
+          <text>{{item.memberNickName}}</text>
+          <view class='collage_phone'>{{item.memberPhone}}</view>
+        </view>
+      </view>
+      
+       <view class='collage_list_alone' wx:if="{{collagingOrderInfo.groupMembers.length<=1}}">
+        <view class='collage_detail'>
+          <image src="{{item.memberIconUrl}}" binderror="headerErrorFunction" data-errorimg="{{idx}}"></image>
+        </view>
+        <view class='collage_right'>
+          <text>{{item.memberNickName}}</text>
+          <view class='collage_phone'>{{item.memberPhone}}</view>
+        </view>
+      </view>
+
+    </block>
+
+
+    <view class='collage_invite'>成团还需邀请
+      <text>{{collagingOrderInfo.remainCount}}</text>人</view>
+  </view>
+
+  <block wx:if="{{isAuthor}}">
+    <form bindsubmit="shareClick" report-submit='true'>
+      <!-- bg_end 拼团结束style -->
+      <button class='dowload_app bg_end' form-type="submit" hidden="{{isHiddenPay}}" data-timeid="1">¥{{collagingOrderInfo.payedAmount}} 和朋友一起同行</button>
+    </form>
+  </block>
+  <block wx:else>
+    <button class='dowload_app bg_end' open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" hidden="{{isHiddenPay}}" data-timeid="1">¥{{collagingOrderInfo.payedAmount}} 和朋友一起同行</button>
+  </block>
+
+
+</view>

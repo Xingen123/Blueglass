@@ -1,0 +1,8 @@
+<!--pages/uclickFirTab/map/index.wxml-->
+<view class="map_container" style="height:{{clientHeight?clientHeight+'px':'auto'}}"> 
+  <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="11" show-location="true" markers="{{markers}}" bindmarkertap="makertap" callout = ""></map> 
+</view> 
+<view class="rgc_info {{showView?'show':'hide'}}" > 
+  <image src='{{iconPathImg}}'></image>
+  <view class='rgc_title owt'>去体验 | {{addressName}} </view>
+</view>

@@ -1,0 +1,48 @@
+<!--pages/uclickSecTab/haveInHand/index.wxml-->
+<view class='haveInHand'>
+  <view class='haveInHand_img boxshoaw' bindtap='expClick' >
+    <image src="{{haveInhandOrderInfo.recommendImg}}" binderror="completedErrorFunction"></image>
+    <view class='haveInHand_img_desc'>{{haveInhandOrderInfo.recommendTitle}}</view>
+  </view>
+
+  <view class='haveInHand_wz boxshoaw'>
+    <text class='haveInHand_title'>拼团详情</text>
+    <view class='haveInHand_loaction' bindtap='openMap'>
+      <view class='haveInHand_loaction_left'>
+        <image src='../../images/order/Ddw@2x.png'></image>
+        <text>{{haveInhandOrderInfo.recommendAddress.addressDetail}}</text>
+      </view>
+      <image src='../../images/home/gd.png' class="haveInHand_wz_img"></image>
+    </view>
+    <view class='haveInHand_time'>
+      <view class='haveInHand_time_left'>
+        <image src='../../images/order/Xsj@2x.png'></image>
+        <text>{{haveInhandOrderInfo.recommendTime}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='haveInHand_person boxshoaw' wx:if="{{haveInhandOrderInfo.groupMembers.length>0&haveInhandOrderInfo.isCollage}}">
+    <text class='haveInHand_title'>成员信息</text>
+    <block wx:for="{{haveInhandOrderInfo.groupMembers}}" wx:for-item="item" wx:for-index="idx">
+      <view class='haveInHand_per_list'>
+        <view class='haveInHand_per_detail'>
+          <image src="{{item.memberIconUrl}}"binderror="headerErrorFunction" data-errorimg="{{idx}}"></image>
+          <text>{{item.memberNickName}}</text>
+        </view>
+        <view class='haveInHand_per_time'>{{item.joinTime}}加入</view>
+      </view>
+    </block>
+  </view>
+
+
+
+  <view class='pay_detail boxshoaw'>
+    <text class='haveInHand_title'>订单详情</text>
+    <view class='pay_detail_order'>订单编号：{{haveInhandOrderInfo.orderNumber}}</view>
+    <view class='pay_detail_order'>订单状态：{{haveInhandOrderInfo.orderStatus}}</view>
+    <view class='pay_detail_order'>支付时间：{{haveInhandOrderInfo.payTime}}</view>
+    <view class='pay_detail_order'>支付金额：¥{{haveInhandOrderInfo.payedAmount}}</view>
+  </view>
+
+</view>

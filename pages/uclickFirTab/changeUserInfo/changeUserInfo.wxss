@@ -1,0 +1,49 @@
+/* pages/uclickThiTab/uclickBindMobile/uclickBindMobile.wxss */
+
+.bind-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bind-phoneInput{
+  margin-top: 120rpx;
+  width: calc(100% - 60rpx);
+  color: #666666;
+  border-bottom: 2rpx solid #dedede;
+}
+
+.bind-codeView{
+  width: calc(100% - 60rpx);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100rpx;
+  border-bottom:  2rpx solid #dedede;
+}
+
+.bind-codeButton{
+  color: #0080ba;
+  font-size: 38rpx;
+  background-color: rgba(0, 0, 0, 0);
+  margin-top: 15rpx;
+}
+
+.bind-codeButton::after{
+  border: none;
+
+}
+
+
+.bind-codeInput{
+  margin-top: 49rpx;
+  color: #333333;
+}
+
+.bind-sureButton{
+  width: calc(100% - 60rpx);
+  margin-top: 100rpx;
+  background-color:#0080ba;
+  color: white;
+  font-size: 38rpx;
+}

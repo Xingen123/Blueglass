@@ -1,0 +1,36 @@
+<!--pages/uclickSecTab/finishDetail/index.wxml-->
+<view class='haveInHand'>
+  <view class='haveInHand_img boxshoaw' bindtap='expClick'>
+    <image src="{{finishOrderInfo.recommendImg}}" binderror="completedErrorFunction" ></image>
+    <view class='haveInHand_img_desc'>{{finishOrderInfo.recommendTitle}}</view>
+  </view>
+
+  <view class='pay_detail boxshoaw'>
+    <text class='haveInHand_title'>支付详情</text>
+    <view class='pay_detail_order'>订单编号：{{finishOrderInfo.orderNumber}}</view>
+    <view class='pay_detail_order'>订单状态：
+      <text class="order_detail">{{finishOrderInfo.orderStatus}}</text> </view>
+    <view class='pay_detail_order'>支付时间：{{finishOrderInfo.payTime}}</view>
+    <view class='pay_detail_order'>支付金额：¥{{finishOrderInfo.payedAmount}}</view>
+    <view class='pay_detail_order' wx:if="{{orderStatus == '退款'}}">退款状态：已退款</view>
+  </view>
+
+  <view class='haveInHand_person boxshoaw' wx:if="{{finishOrderInfo.groupMembers.length>0&finishOrderInfo.isCollage}}">
+    <text class='haveInHand_title'>成员信息</text>
+
+    <block wx:for="{{finishOrderInfo.groupMembers}}" wx:for-item="item" wx:for-index="idx">
+      <view class='haveInHand_per_list'>
+        <view class='haveInHand_per_detail'>
+          <image src="{{item.memberIconUrl}}" binderror="headerErrorFunction" data-errorimg="{{idx}}"></image>
+          <text>{{item.memberNickName}}</text>
+        </view>
+        <view class='haveInHand_per_time'>{{item.joinTime}}加入</view>
+      </view>
+    </block>
+
+
+
+  </view>
+
+  <!-- <view class='dowload_app'>下载U Click App 发现更多体验</view> -->
+</view>

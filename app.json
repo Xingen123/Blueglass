@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/uclickFirTab/uclickHomePage/index",
+    "pages/uclickFirTab/experience/index",
+    "pages/uclickThiTab/uclickMe/index",
+    "pages/uclickSecTab/uclickOrder/index",
+    "pages/uclickThiTab/uclickBindMobile/uclickBindMobile",
+    "pages/uclickThiTab/uclickMyCoupon/uclickMyCoupon",
+    "pages/uclickThiTab/uclickMyCoupon/couponRule/couponRule",
+    "pages/uclickThiTab/uclickAboutBefriend/uclickAboutBefriend",
+    "pages/uclickSecTab/collageDetail/index",
+    "pages/uclickSecTab/haveInHand/index",
+    "pages/uclickSecTab/finishDetail/index",
+    "pages/uclickFirTab/changeUserInfo/changeUserInfo",
+    "pages/uclickFirTab/selectTime/selectTime",
+    "pages/uclickSecTab/share/index",
+    "pages/uclickFirTab/pay/index",
+    "pages/uclickAuthorPage/uclickAuthorPage",
+    "pages/uclickFirTab/map/index",
+    "pages/uclickFirTab/wxmap/index",
+    "pages/uclickFirTab/video/index",
+    "pages/uclickThiTab/uclickBecomePage/uclickBecomePage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Blueglass体验",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/uclickFirTab/uclickHomePage/index",
+        "text": "首页",
+        "selectedIconPath": "pages/images/tabbar/bsy.png",
+        "iconPath": "pages/images/tabbar/sy.png"
+      },
+      {
+        "pagePath": "pages/uclickSecTab/uclickOrder/index",
+        "text": "订单",
+        "selectedIconPath": "pages/images/tabbar/bdd.png",
+        "iconPath": "pages/images/tabbar/dd.png"
+      },
+      {
+        "pagePath": "pages/uclickThiTab/uclickMe/index",
+        "text": "我的",
+        "selectedIconPath": "pages/images/tabbar/bwd.png",
+        "iconPath": "pages/images/tabbar/wd.png"
+      }
+    ],
+    "color": "#666666",
+    "selectedColor": "#0080ba"
+  }
+}

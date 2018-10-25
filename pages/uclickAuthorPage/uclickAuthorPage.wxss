@@ -1,0 +1,26 @@
+/* pages/uclickAuthorPage/uclickAuthorPage.wxss */
+
+.main{ width: 100%; height: 100%; background: url(http://sxz-1255492784.cos.ap-guangzhou.myqcloud.com/login_bj.jpg) no-repeat 0 0; background-size: 100% 100%; padding-top: 450rpx; box-sizing: border-box;}
+
+.title{ color: #021429; text-align: center; margin-bottom: 100rpx; font-size: 40rpx;} 
+button{ margin: 0;font-size: 38rpx;}
+.login{ width: 68%; color: #fff; margin: 0 auto;}
+.main_b{ background: #e16531 !important; color: #fff;} 
+
+page {
+    height: 100%;
+    /* background-image: url("http://sxz-1255492784.cos.ap-guangzhou.myqcloud.com/login_bj.jpg"); */
+}
+/* button::after{
+    border: none;
+}
+.warp button {
+    width: 100%;
+    height:100%;
+    position: absolute;
+    border-radius:0px 0px 0px 0px;
+    color: transparent;
+    background:transparent no-repeat center center;
+    background-size: cover;   
+    background-image: url("http://sxz-1255492784.cos.ap-guangzhou.myqcloud.com/login_bj.jpg"); 
+} */

@@ -1,0 +1,11 @@
+<!--pages/uclickThiTab/uclickBindMobile/uclickBindMobile.wxml-->
+<!-- <text>pages/uclickThiTab/uclickBindMobile/uclickBindMobile.wxml</text>
+ -->
+ <view class='bind-container' >
+  <input class='bind-phoneInput' placeholder='输入手机号' type='number' name = 'phone' bindinput="phoneInput" placeholder-class='placeholder'></input>
+  <view class='bind-codeView'>
+    <input class='bind-codeInput' type='number' name='code' bindinput="codeInput"></input>
+    <button disabled='{{disabled}}' data-id="2" class='bind-codeButton' catchtap='getBindCode'>{{time}}</button>
+  </view>
+  <button class='bind-sureButton' catchtap='sureAction'>完成绑定</button>
+ </view>

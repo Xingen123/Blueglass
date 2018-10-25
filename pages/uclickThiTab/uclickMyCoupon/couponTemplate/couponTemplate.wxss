@@ -1,0 +1,89 @@
+.coupon-cell-lineView{
+  height: 20rpx;
+}
+
+.coupon-cell-container{
+  display: flex;
+  flex-direction: column;
+  height: 240rpx;
+  width: calc(100% - 60rpx);
+  
+  border-radius: 10rpx;
+  margin-left: 30rpx;
+  /* justify-content: space-between */
+}
+.bg_blue{
+  background-color:#0080ba;
+}
+.bg_gray{
+  background-color:#dedede;
+}
+.coupon-cell-topView{
+  display: flex;
+  flex-direction: row;
+}
+
+.coupon-cell-moneyTitle{
+  display: flex;  
+  flex-direction: column;
+}
+
+.coupon-cell-title{
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  color: #fff;
+}
+
+.coupon-cell-money{
+  font-size: 102rpx;
+  margin-left: 40rpx;
+  color: #fff;
+}
+
+.coupon-cell-dateCondition{
+  display: flex;
+  flex-direction: column;
+}
+
+.coupon-cell-couponName{
+  color: #fff;
+  font-size: 38rpx;
+  margin-left: 55rpx;
+  margin-top: 20rpx;
+}
+
+.coupon-cell-useCondition{
+  font-size: 26rpx;
+  margin-left: 55rpx;
+  margin-top: 10rpx;
+  color: #fff;
+}
+
+.coupon-cell-date{
+  font-size: 26rpx;
+  color: #fff;
+  margin-left: 55rpx;
+}
+
+.coupon-cell-codeView{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.coupon-cell-code{
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  color: #fff;
+}
+
+.coupon-cell-paste{
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  color: #fff;
+  border-color: #fff;
+  border-radius: 6rpx;
+}
+

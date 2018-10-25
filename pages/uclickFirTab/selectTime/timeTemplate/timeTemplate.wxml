@@ -1,0 +1,15 @@
+<template name = 'timeTemplate'>
+  <view class='time-container'>
+    <view class='time-view'>
+        <text class='time-label' space="ensp" >{{item.timeInfo}}</text>
+    </view>
+    <view class='image-view'>
+    <block wx:if="{{item.isShow}}">
+      <image  class='select-style' src='../../images/home/xz@2x.png'></image>
+    </block>
+    <block wx:else>
+      <image  class='select-style' src=''></image>
+    </block>
+    </view>
+  </view>
+</template>

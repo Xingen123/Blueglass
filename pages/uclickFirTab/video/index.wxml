@@ -1,0 +1,5 @@
+<!--pages/uclickFirTab/video/index.wxml-->
+<view class='mark'>
+  <video id="myVideo" src="{{coverVideoSrc}}" controls autoplay enable-danmu show-fullscreen-btn="false"></video>
+</view>
+

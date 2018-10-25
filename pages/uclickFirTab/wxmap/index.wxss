@@ -1,0 +1,14 @@
+.controls {
+  position: relative;
+  top: 50%;
+  height: 300rpx;
+  margin-top: -25px;
+  width: 300rpx;
+  display: flex;
+}
+.time {
+  text-align: center;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  line-height: 50px;
+}

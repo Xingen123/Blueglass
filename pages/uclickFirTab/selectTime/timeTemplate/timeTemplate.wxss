@@ -1,0 +1,32 @@
+
+
+.time-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  border-bottom: 2rpx solid #dedede;
+}
+
+.time-view{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+}
+
+.image-view{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+}
+
+.time-label{
+  font-size: 38rpx;
+  color: #333333;
+}
+
+.select-style{
+  height: 36rpx;
+  width: 36rpx;
+}

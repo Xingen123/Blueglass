@@ -1,0 +1,10 @@
+<!--pages/uclickFirTab/changeUserInfo/changeUserInfo.wxml-->
+<!-- <text>pages/uclickFirTab/changeUserInfo/changeUserInfo.wxml</text> -->
+
+<view class='bind-container'>
+  <input class='bind-phoneInput' placeholder='输入昵称' type='text' value="{{nickName}}" bindinput="getNickName"></input>
+  <view class='bind-codeView'>
+    <input class='bind-codeInput' placeholder='输入手机号' type='number' value="{{telphone}}" bindinput="getPhone" maxlength="11"></input>
+  </view>
+  <button class='bind-sureButton' catchtap='sureAction'>保存信息</button>
+</view>

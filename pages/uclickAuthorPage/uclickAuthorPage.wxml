@@ -1,0 +1,13 @@
+<view class="main">
+<view>
+    <view class="title">本小程序需要您的微信头像和别名信息以使用完整功能...</view>
+
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" class="main_b login" catchgetuserinfo="login">打开授权以体验完整功能</button>
+    <view wx:else>请升级微信版本</view>
+    </view>
+</view>
+
+<!-- <view class='warp'>
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" hover-class='none' bindgetuserinfo="getUserInfoFun">打开授权以体验完整功能</button>
+    <view wx:else>请升级微信版本</view> 
+</view> -->

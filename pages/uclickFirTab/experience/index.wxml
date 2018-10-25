@@ -1,0 +1,220 @@
+<!--pages/uclickFirTab/experience/index.wxml-->
+<!-- wx:if="{{item.isVideo}}" -->
+<page>
+  <view>
+    <!-- <view>
+  <video id="myVideo" src="{{coverVideoSrc}}" style="height:{{windowHeight?windowHeight+'px':'auto'}}" controls autoplay enable-danmu show-fullscreen-btn="false" class="{{showVideo?'show':'hide'}}"></video>
+  <button>关闭</button>
+</view> -->
+
+    <!-- 视频，轮播图二选一 -->
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" circular="{{circular}}" wx:if="{{isImage}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}"
+      next-margin="{{nextMargin}}" class='swiperimg' bindchange="listenSwiper">
+      <block wx:for="{{swiperArr}}">
+        <swiper-item class='swiperimg' wx:if="{{item.isImage}}">
+
+          <view class='swiper_fixed'>
+            <image src="{{item.url}}" class="slide-image" width="375" height="700" binderror="lunboerrorFunction" data-errorimg="{{idx}}" />
+            <view class='video_btn' catchtap='videopaly' wx:if="{{isVideo}}">视频</view>
+          </view>
+
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class='be_title'>{{recommendDetail.title}}</view>
+    <view class='be_desc'>{{recommendDetail.subTitle}}</view>
+
+    <view class='be_address' bindtap='openMap'>
+      <view class='be_address_left'>
+        <image src='../../images/home/dw@2x.png'></image>
+        <text>{{recommendDetail.recommendAddress.addressDetail}}</text>
+      </view>
+      <view class='be_address_right'>
+        <image src='../../images/home/gd.png'></image>
+      </view>
+    </view>
+
+    <view class='be_address be_time'>
+      <view class='be_time_left'>
+        <image src='../../images/order/Dsj@2x.png'></image>
+        <text>{{recommendDetail.timeInfos[0].timeInfo}}</text>
+      </view>
+      <view class='be_address_right' bindtap='pushTimeSelect'>
+        查看更多时间
+        <image src='../../images/home/gd.png'></image>
+      </view>
+    </view>
+    <!-- tab切换 -->
+    <view class="page">
+      <view class="navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+            <view class="navbar_title {{activeIndex == index ? 'navbar_title_cur' : ''}}">{{item.name}}</view>
+          </view>
+        </block>
+      </view>
+      <view>
+        <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="width: 100%;height:{{clientHeight?clientHeight+'px':'auto'}}">
+          <swiper-item>
+            <!-- 达人介绍 -->
+            <view class='doyen aMan'>
+              <view class='doyen_fir'>
+                <view class='doyen_info'>
+                  <view class='doyen_info_title'>{{recommendDetail.authorInfo.authorName}}</view>
+                  <view class='doyen_info_label'>
+                    <block wx:for="{{recommendDetail.authorInfo.relateTitle}}" wx:for-item="item" wx:for-index="idx">
+                      <view>{{item}}</view>
+                    </block>
+                  </view>
+                </view>
+                <view class='doyen_img'>
+                  <image src="{{recommendDetail.authorInfo.authorIconUrl}}" binderror="headerErrorFunction"></image>
+                </view>
+              </view>
+              <!-- 个人介绍 -->
+              <view class='doyen_per'>
+                <view class='doyen_per_intr'>个人介绍</view>
+                <view class='doyen_per_desc' style=" -webkit-line-clamp:{{user_webkit_line_clamp}}">
+                  {{recommendDetail.authorInfo.introduction}}
+                </view>
+
+                <view class='doyen_per_seemore' bindtap='watchBtnAction' data-watchid="{{watchBtnStr}}" hidden="{{!isshowBtn}}">{{watchBtnStr}}></view>
+              </view>
+
+              <!-- 希望通过体验传递什么 -->
+              <view class='doyen_per'>
+                <view class='doyen_per_intr'>希望通过体验传递什么</view>
+                <view class='doyen_per_desc'>
+                  {{recommendDetail.authorInfo.purpose}}
+                </view>
+              </view>
+
+            </view>
+          </swiper-item>
+
+          <!-- 体验详情 -->
+          <swiper-item>
+            <view class='doyen experience'>
+
+              <block wx:for="{{detailItems}}" wx:for-item="item" wx:for-index="idx">
+                <view class='doyen_per'>
+                  <view class='doyen_per_intr'>{{item.itemTitle}}</view>
+                  <view class='doyen_per_desc' style=" -webkit-line-clamp:{{item.user_webkit_line_clamp}}">
+                    {{item.itemDetail}}
+                  </view>
+                  <view class='doyen_per_seemore' bindtap='detailWatchBtnAction' data-watchid="{{item.watchBtnStr}}" data-detailid="{{idx}}" hidden="{{!item.isshowBtn}}">{{item.watchBtnStr}}></view>
+                </view>
+              </block>
+              <!-- 个人介绍 -->
+              <!-- 团队人数 -->
+              <view class='group_num'>团队人数最多{{recommendDetail.detailInfo.groupLimit}}人</view>
+              <!-- 您可能还想预定 -->
+              <view>
+                <view class='reserve'>您可能还想预定</view>
+                <scroll-view class="nav" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+                  <block wx:for="{{recommendDetail.detailInfo.wantRecommends}}" wx:for-item="item" wx:for-index="idx">
+                    <view class='nav_img' bindtap='expClick' data-experid="{{item.id}}">
+                      <image src="{{item.homeImgUrl}}" binderror="footerErrorFunction" data-errorimg="{{idx}}"></image>
+                      <view class='nav_title owt2'>{{item.title}}</view>
+                    </view>
+                  </block>
+                </scroll-view>
+              </view>
+
+            </view>
+          </swiper-item>
+
+          <!-- 精选评论 -->
+          <swiper-item>
+            <view class='comment_3' wx:if="{{recommendDetail.commentFullInfo.commentInfos.length>0 && recommendDetail.commentFullInfo.totalCount > 0 && recommendDetail.commentFullInfo.totalStars >0}}">
+              <view class='score'>
+                <view class='score_num'>{{recommendDetail.commentFullInfo.totalStars}}</view>
+                <view class='score_star'>
+                  <block wx:for="{{allStarAr}}" wx:for-item="item" wx:for-index="idx">
+                    <image src="{{item}}"></image>
+                  </block>
+                </view>
+                <view class='score_person'>
+                  {{recommendDetail.commentFullInfo.totalCount}}
+                  <image src='../../images/home/rs@2x.png'></image>
+                </view>
+              </view>
+              <view class='comment'>
+
+                <block wx:for="{{commentInfos}}" wx:for-item="item" wx:for-index="idx">
+                  <view class='comment_con'>
+                    <view class='comment_info'>
+                      <view class='comment_left'>
+                        <view class=' comment_head'>
+                          <image src='{{item.iconUrl ?item.iconUrl  : "../../images/default/mrtx@2x/png" }}' binderror="pinglunErrorFunction" data-errorimg="{{idx}}"></image>
+                        </view>
+                        <view class='comment_right'>
+                          <text>{{item.nickName}}</text>
+                          <view class='score_xstar'>
+                            <block wx:for="{{item.allStarArr}}" wx:for-item="item" wx:for-index="idx">
+                              <image src="{{item}}"></image>
+                            </block>
+                          </view>
+                        </view>
+                      </view>
+
+                      <view class='comment_time'>
+                        {{item.date}}
+                      </view>
+                    </view>
+
+                    <view class='comment_desc'>
+                      {{item.content}}
+                    </view>
+                  </view>
+                </block>
+
+              </view>
+            </view>
+            <!-- 无评论判断 -->
+            <view class='comment_3' style="height:500rpx" wx:else="{{recommendDetail.commentFullInfo.commentInfos.length==0 && recommendDetail.commentFullInfo.totalCount == 0 && recommendDetail.commentFullInfo.totalStars == 0}}">
+              <image src='../../images/default/zwpl.png' class='img_default'></image>
+            </view>
+
+          </swiper-item>
+
+
+        </swiper>
+      </view>
+    </view>
+    <!-- 购买按钮 -->
+    <view class='pay'>
+      <button class='share' open-type="share" id="1">
+        <image src='../../images/home/fx@2x.png'></image>
+      </button>
+      <block wx:if="{{isAuthor}}">
+        <view class='alone_pay' bindtap='alonePay'>
+          <view>¥{{recommendDetail.price}}/人 </view>
+          <view class='pay_desc'>单独购买</view>
+        </view>
+        <view class='group_buy' bindtap='groupBuy'>
+          <!-- ¥{{recommendDetail.collagePrice}}/{{recommendDetail.collageCount}}人同行 -->
+          <view>¥{{recommendDetail.collagePrice}}/人 </view>
+          <view class='pay_desc'>{{recommendDetail.collageCount}}人同行</view>
+        </view>
+      </block>
+      <block wx:else>
+        <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" hover-class='none' class='login_btn'>
+          <view class='alone_pay' catchtap='alonePay'>
+            <view style='height:50rpx;'>¥{{recommendDetail.price}}/人 </view>
+            <view class='pay_desc'>单独购买</view>
+
+          </view>
+        </button>
+        <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" hover-class='none' class='login_btn'>
+          <view class='group_buy' catchtap='groupBuy'>
+            <!-- ¥{{recommendDetail.collagePrice}}/{{recommendDetail.collageCount}}人同行 -->
+            <view style='height:50rpx;'>¥{{recommendDetail.collagePrice}}/人 </view>
+            <view class='pay_desc'>{{recommendDetail.collageCount}}人同行</view>
+          </view>
+        </button>
+      </block>
+    </view>
+  </view>
+</page>

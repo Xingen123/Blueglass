@@ -1,0 +1,21 @@
+/* pages/uclickThiTab/uclickMyCoupon/couponRule/couponRule.wxss */
+
+.coupon-ruleTitle{
+  display: flex;
+  flex-direction: row;
+  font-size: 40rpx;
+  justify-content: center;
+  font-weight: bold;
+}
+.coupon_con{
+  width: calc(100% - 60rpx);
+  margin: 0 auto;
+  text-align: justify;
+}
+.coupon-rule{
+  /* width: calc(100% -60rpx); */
+  /* margin: 0 auto; */
+  padding: 20rpx 0;
+  text-align: center;
+
+}

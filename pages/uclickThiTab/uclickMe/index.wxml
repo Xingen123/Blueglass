@@ -1,0 +1,107 @@
+<!--pages/uclickThiTab/uclickMe/index.wxml-->
+<!-- <text>pages/uclickThiTab/uclickMe/index.wxml</text>
+ -->
+
+<view class='me-container'>
+  <block wx:if="{{canIUse}}">
+    <view class='me-headimage-container'>
+      <image class='me-head-image' src='{{avatarUrl}}'></image>
+      <!-- <open-data type="userAvatarUrl" class='me-head-image'></open-data> -->
+      <text class='me-name'>{{nickName}}</text>
+      <!-- <open-data type="userNickName" lang="zh_CN" class = 'me-name'></open-data> -->
+    </view>
+
+  </block>
+  <block wx:else>
+    <button open-type="getUserInfo" class="main_b login" bindgetuserinfo="onGotUserInfo" hover-class='none'>
+      <view class='me-headimage-container'>
+        <image class='me-head-image' src='{{avatarUrl}}'></image>
+        <!-- <open-data type="userAvatarUrl" class='me-head-image'></open-data> -->
+        <text class='me-name'>{{nickName}}</text>
+        <!-- <open-data type="userNickName" lang="zh_CN" class = 'me-name'></open-data> -->
+      </view>
+    </button>
+  </block>
+</view>
+<view class='me-middle-padding'></view>
+<block wx:if="{{canIUse}}">
+  <view class='me-bindPhone' catchtap='bindMobileAction'>
+    <view class='me-leftimg'>
+      <image class='me-bindPhoneImage' src='../../images/my/sjh@2x.png'></image>
+      <text class='me-bindPhoneText'>{{phoneNumber}}</text>
+    </view>
+    <image class='me-arrowImage' src='../../images/my/gd@2x.png'></image>
+  </view>
+</block>
+<block wx:else>
+  <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" hover-class='none'>
+    <view class='me-bindPhone-phone' catchtap='bindMobileAction'>
+      <view class='me-leftimg'>
+        <image class='me-bindPhoneImage' src='../../images/my/sjh@2x.png'></image>
+        <text class='me-bindPhoneText'>点击绑定手机号</text>
+      </view>
+      <image class='me-arrowImage' src='../../images/my/gd@2x.png'></image>
+    </view>
+  </button>
+</block>
+
+<block wx:if="{{canIUse}}">
+  <view class='me-bindPhone' catchtap='myCouponAction'>
+    <view class='me-leftimg'>
+      <image class='me-bindPhoneImage' src='../../images/my/yhq@2x.png'></image>
+      <text class='me-bindPhoneText'>我的优惠券</text>
+    </view>
+    <image class='me-arrowImage' src='../../images/my/gd@2x.png'></image>
+  </view>
+</block>
+<block wx:else>
+  <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" hover-class='none'>
+    <view class='me-bindPhone-phone' catchtap='myCouponAction'>
+      <view class='me-leftimg'>
+        <image class='me-bindPhoneImage' src='../../images/my/yhq@2x.png'></image>
+        <text class='me-bindPhoneText'>我的优惠券</text>
+      </view>
+      <image class='me-arrowImage' src='../../images/my/gd@2x.png'></image>
+    </view>
+  </button>
+</block>
+
+
+<view class='me-bindPhone' catchtap='aboutUsAction'>
+  <view class='me-leftimg'>
+    <image class='me-bindPhoneImage' src='../../images/my/ty@2x.png'></image>
+    <text class='me-bindPhoneText'>关于Blueglass体验</text>
+  </view>
+  <image class='me-arrowImage' src='../../images/my/gd@2x.png'></image>
+</view>
+
+<view class='me-bindPhone' catchtap='BecomeAction'>
+  <view class='me-leftimg'>
+    <image class='me-bindPhoneImage' src='../../images/my/daren@2x.png'></image>
+    <text class='me-bindPhoneText'>关于成为Blueglass达人</text>
+  </view>
+  <image class='me-arrowImage' src='../../images/my/gd@2x.png'></image>
+</view>
+
+<block wx:if="{{canIUse}}">
+  <button open-type="contact" hover-class='none'>
+    <view class='me-bindPhone-phone'>
+      <view class='me-leftimg'>
+        <image class='me-bindPhoneImage' src='../../images/my/kf@2x.png'></image>
+        <text class='me-bindPhoneText'>联系客服</text>
+      </view>
+      <image class='me-arrowImage' src='../../images/my/gd@2x.png'></image>
+    </view>
+  </button>
+</block>
+<block wx:else>
+  <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" hover-class='none'>
+    <view class='me-bindPhone-phone'>
+      <view class='me-leftimg'>
+        <image class='me-bindPhoneImage' src='../../images/my/kf@2x.png'></image>
+        <text class='me-bindPhoneText'>联系客服</text>
+      </view>
+      <image class='me-arrowImage' src='../../images/my/gd@2x.png'></image>
+    </view>
+  </button>
+</block>

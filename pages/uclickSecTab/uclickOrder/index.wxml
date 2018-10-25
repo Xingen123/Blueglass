@@ -1,0 +1,78 @@
+<view>
+  <!-- tab切换 -->
+  <view class="page">
+    <view class="navbar">
+      <block wx:for="{{tabs}}" wx:key="*this">
+        <view id="{{index}}" class="navbar__item {{activeIndex == index ? 'navbar__item_on' : ''}}" bindtap="navTabClick">
+          <view class="navbar_title {{activeIndex == index ? 'navbar_title_cur' : ''}}">{{item.name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <swiper current="{{activeIndex}}" duration="300" bindchange="bindChange" style="width: 100%;height:{{clientHeight?clientHeight+'px':'auto'}}">
+    <swiper-item wx:if="{{collagingOrderlist.length>0}}">
+      <!-- 拼团中 -->
+      <view class='collage'>
+        <block wx:for="{{collagingOrderlist}}" wx:for-item="item" wx:for-index="idx">
+          <view class='swiper_con boxshoaw' catchtap='collage'  data-orderid="{{item.orderId}}">
+            <image src="{{item.orderImgUrl}}" binderror="collageErrorFunction" data-errorimg="{{idx}}" ></image>
+            <view class='swiper_con_bot'>
+              <view class='collage_left'>
+                <text class='collage_time'>{{item.difftime}}</text>
+                <text class='collage_person'>拼团中，还差{{item.remainCount}}人</text>
+              </view>
+              <button class='collage_button'  id="{{idx}}" >邀请好友</button>
+            </view>
+          </view>
+        </block>
+      </view>
+    </swiper-item>
+    <!-- 拼团中判断 -->
+    <swiper-item wx:else="{{collagingOrderlist.length==0}}">
+          <image src='../../images/default/zwdd.png' class='img_default'></image>
+    </swiper-item>
+
+    <!-- 进行中 -->
+    <swiper-item wx:if="{{underWayOrderlist.length>0}}">
+      <view class='have_in_hand'>
+        <block wx:for="{{underWayOrderlist}}" wx:for-item="item" wx:for-index="idx">
+          <view class='swiper_con boxshoaw' bindtap='HaveInHand' data-orderid="{{item.orderId}}">
+            <image src="{{item.orderImgUrl}}" binderror="underWayErrorFunction" data-errorimg="{{idx}}"></image>
+            <view class='swiper_con_bot'>
+              <text class='have_in_hand_time'>{{item.time}}</text>
+              <button class='have_in_hand_button'>{{item.statusDesc}} </button>
+            </view>
+          </view>
+        </block>
+
+      </view>
+    </swiper-item>
+  <!-- 进行中判断 -->
+  <swiper-item wx:else="{{underWayOrderlist.length==0}}">
+        <image src='../../images/default/zwdd.png' class='img_default'></image>
+    </swiper-item>
+
+    <!-- 已完成 -->
+    <swiper-item wx:if="{{completeOrderlist.length>0}}">
+      <view class='completed'>
+        <block wx:for="{{completeOrderlist}}" wx:for-item="item" wx:for-index="idx">
+
+          <view class='swiper_con boxshoaw'  bindtap='finishDetail' data-orderid="{{item.orderId}}">
+            <image src="{{item.orderImgUrl}}" binderror="completedErrorFunction" data-errorimg="{{idx}}"></image>
+            <view class='swiper_con_bot'>
+              <text class='have_in_hand_time'>{{item.time}}</text>
+              <button class='completed_button'>{{item.statusDesc}}</button>
+            </view>
+          </view>
+        </block>
+
+      </view>
+    </swiper-item>
+     <!-- 已完成判断 -->
+  <swiper-item wx:else="{{completeOrderlist.length==0}}">
+      <image src='../../images/default/zwdd.png' class='img_default'></image>
+  </swiper-item>
+  </swiper>
+
+</view>

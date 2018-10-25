@@ -1,0 +1,37 @@
+/* pages/uclickThiTab/uclickMyCoupon/uclickMyCoupon.wxss */
+@import "couponTemplate/couponTemplate.wxss";
+
+.coupon-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.coupon-ruleView{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.coupon-useTitle{
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  font-size: 32rpx;
+}
+
+.coupon-useIcon{
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  width: 26rpx;
+  height: 26rpx;
+
+}
+.img_default{
+  height: 250rpx;
+  width: 250rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -200rpx;
+  bottom: 0;
+  margin: auto;
+}

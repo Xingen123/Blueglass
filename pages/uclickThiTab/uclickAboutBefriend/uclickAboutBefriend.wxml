@@ -1,0 +1,4 @@
+<!--pages/uclickThiTab/uclickAboutBefriend/uclickAboutBefriend.wxml-->
+<!-- <text>pages/uclickThiTab/uclickAboutBefriend/uclickAboutBefriend.wxml</text> -->
+
+<web-view src = "http://mp.weixin.qq.com/s?__biz=MzUzMzUzNjY4Ng==&mid=100005373&idx=1&sn=6ec7da6b7a1abc7edc8abe981a6d4851&chksm=7aa3df3c4dd4562a20cff2c697f4db9af95127b62675f34e54f940ddbdde26296ae7fe248630#rd"></web-view>
